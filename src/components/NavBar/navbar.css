@@ -1,0 +1,21 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: rgb(250, 195, 205);
+}
+nav ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+nav li{
+    margin-right: 50px;
+}
+nav a{
+    text-decoration: none;
+    color:black;
+}

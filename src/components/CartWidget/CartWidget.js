@@ -1,9 +1,8 @@
-import carro from '../img/carrito.png';
 
 const CartWidget = () => {
   return (
     <div>
-        <img src={carro}/>
+        <img alt="carrito" src="./images/carrito.png"/>
         <span>1</span>
     </div>
   )
