@@ -1,20 +1,24 @@
-
 import { useState } from 'react'
 
 const ItemCount = () => {
+  const stock=10;
   const [contador, setContador]=useState(0);
   const suma = () =>{
+    if(contador==stock){
+      alert("no hay mas stock")
+      return;
+    }
     setContador(contador+1);
   };
   const resta = () =>{
-    if(contador<=0){
+    if(contador==0){
       return;
-    }else{
-      setContador(contador-1);
     }
+    setContador(contador-1);
   };
+  
   return (
-    <div>
+    <div className='contador'>
         <div className='controles'>
             <button onClick={resta}>-</button>
             <span>{contador}</span>
