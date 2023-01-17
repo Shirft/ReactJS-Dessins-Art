@@ -1,0 +1,21 @@
+.controles>button{
+    border:none;
+    background-color: #8e5445;
+    color: aliceblue;
+    font-size: 40px;
+    margin: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.controles>span{
+    font-size: 40px;
+}
+.agregarCarrito{
+    border:none;
+    background-color: #8e5445;
+    color: aliceblue;
+    cursor: pointer;
+    padding: 0.8%;
+}
