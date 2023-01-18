@@ -11,10 +11,10 @@ const NavBar = ({clase, clase2}) => {
                 <a href="#" className={clase}>Inicio</a>
             </li>
             <li className={clase2}>
-                <a href="#" className={clase}>Quienes somos</a>
+                <a href="#" className={clase}>Mates</a>
             </li>
             <li className={clase2}>
-                <a href="#" className={clase}>Productos</a>
+                <a href="#" className={clase}>Cuadros</a>
             </li>
         </ul>
         <CartWidget></CartWidget>

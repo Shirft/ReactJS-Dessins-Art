@@ -1,6 +1,5 @@
 import ItemCount from "../../components/ItemCount/ItemCount";
 import ItemList from "../../components/ItemList/ItemList";
-import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer";
 import { useEffect, useState } from "react";
 
 const ItemListContainer = ({greeting}) => {
@@ -17,9 +16,7 @@ const ItemListContainer = ({greeting}) => {
   {id:'10', title:'Cuadro promo 2', description:'Cuadro con tematica de anime', price:2100, pictureUrl:'./images/megumi.png'},
   ];
 
-  let UnProducto=ListaProductos.find(prod=>prod.id==2)
   const[product, setProduct]=useState([]);
-  const[oneproduct, setOneproduct]=useState({});
 
   const Productos=new Promise((resolve, reject)=>{
     setTimeout(()=>{
@@ -37,28 +34,11 @@ const ItemListContainer = ({greeting}) => {
     })
   }, []);
 
-  const Producto=new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-      resolve(UnProducto)
-    }, 2000)
-  });
-
-  useEffect(()=>{
-    Producto
-    .then((result)=>
-      setOneproduct(result)
-    )
-    .catch((error)=>
-      console.log(error)
-    )
-  }, [])
-
   return (
     <div>
         <h1>{greeting}</h1>
         <ItemCount></ItemCount>
         <ItemList productos={product}></ItemList>
-        <ItemDetailContainer props={oneproduct}></ItemDetailContainer>
     </div>
   );
 };
