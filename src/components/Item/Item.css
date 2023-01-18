@@ -1,0 +1,10 @@
+.productos{
+    padding: 0.5%;
+    border-style: groove;
+    border-color: brown;
+    margin:5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,9 @@
+.unProducto{
+    padding: 0.5%;
+    border-style: groove;
+    border-color: brown;
+    margin:5px;
+    border-radius: 5px;
+    margin-left: 35%;
+    margin-right: 35%;
+}
