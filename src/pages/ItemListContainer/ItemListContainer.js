@@ -20,7 +20,7 @@ const ItemListContainer = ({greeting}) => {
   
   const {category}=useParams();
   const[product, setProduct]=useState([]);
-  const[filtraje, setFiltraje]=useState([]);
+  //const[filtraje, setFiltraje]=useState([]);
 
   const Productos=new Promise((resolve, reject)=>{
     setTimeout(()=>{
@@ -31,27 +31,29 @@ const ItemListContainer = ({greeting}) => {
   useEffect(()=>{
     Productos
     .then((result)=>{
-      setProduct(result)
+      if(category){
+        setProduct(result.filter((cat)=> cat.category===category))
+      }else{
+        setProduct(result)
+      } 
     })
     .catch((error)=>{
       console.log(error)
     })
-  }, []);
-
+  }, [category]);
+/*
   useEffect(()=>{
     if(category){
       let filtro=product.filter((cat)=>{ return cat.category==category});
       setFiltraje(filtro);
-      console.log(filtraje, product)
     }
-       
   }, [category])
-
+*/
   return (
     <div>
         <h1>{greeting}</h1>
         <ItemCount></ItemCount>
-        <ItemList productos={category ? filtraje : product}></ItemList>
+        <ItemList productos={product}></ItemList>
     </div>
   );
 };
