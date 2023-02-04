@@ -1,36 +1,36 @@
-import { useState } from 'react'
-import './ItemCount.css';
+import "./ItemCount.css";
+import { Link } from "react-router-dom";
 
-const ItemCount = () => {
-  const stock=10;
-  const [contador, setContador]=useState(0);
-  const suma = () =>{
-    if(contador==stock){
-      alert("no hay mas stock")
+const ItemCount = ({ contador, valUpgrade, stock }) => {
+  const onAdd = () => {
+    if (contador == stock) {
+      alert("no hay mas stock del producto seleccionado");
       return;
     }
-    setContador(contador+1);
+    valUpgrade(contador + 1);
   };
-  const resta = () =>{
-    if(contador==0){
+  const resta = () => {
+    if (contador == 0) {
       return;
     }
-    setContador(contador-1);
+    valUpgrade(contador - 1);
   };
-  
+
   return (
-    <div className='contador'>
-        <div className='controles'>
-            <button onClick={resta}>-</button>
-            <span>{contador}</span>
-            <button onClick={suma}>+</button>
-        </div>
-        <div>
-            <button className='agregarCarrito'>Agregar al carrito</button>
-        </div>
-        
+    <div className="contador">
+      <div className="controles">
+        <button onClick={resta}>-</button>
+        <span>{contador}</span>
+        <button onClick={onAdd}>+</button>
+      </div>
+      <div>
+      <button className="agregarCarrito">Agregar al carrito</button>
+        <Link to={`/cart`}>
+          <button className="terminarCompra">Terminar mi compra</button>
+        </Link>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ItemCount
+export default ItemCount;

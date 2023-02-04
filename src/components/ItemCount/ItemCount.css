@@ -2,12 +2,16 @@
     border:none;
     background-color: #8e5445;
     color: aliceblue;
-    font-size: 40px;
+    font-size: 30px;
     margin: 2%;
     padding-left: 2%;
     padding-right: 2%;
     border-radius: 5px;
     cursor: pointer;
+    width: 10%;
+}
+.controles>button:hover{
+    background-color: #92736b;
 }
 .controles>span{
     font-size: 40px;
@@ -18,4 +22,19 @@
     color: aliceblue;
     cursor: pointer;
     padding: 0.8%;
+    border-radius: 5px;
+}
+.agregarCarrito:hover{
+    background-color: #92736b;
+}
+.terminarCompra{
+    border:none;
+    background-color: #8e5445;
+    color: aliceblue;
+    cursor: pointer;
+    padding: 0.8%;
+    border-radius: 5px;
+}
+.terminarCompra:hover{
+    background-color: #92736b;
 }

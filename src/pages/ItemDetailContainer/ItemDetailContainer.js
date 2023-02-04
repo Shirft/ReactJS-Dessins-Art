@@ -1,4 +1,4 @@
-import ItemDetail from "../../../components/ItemDetail/ItemDetail"
+import ItemDetail from "../../components/ItemDetail/ItemDetail"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 

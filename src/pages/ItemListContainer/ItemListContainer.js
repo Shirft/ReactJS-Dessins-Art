@@ -1,5 +1,4 @@
 import './ItemListContainer.css'
-import ItemCount from "../../components/ItemCount/ItemCount";
 import ItemList from "../../components/ItemList/ItemList";
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
@@ -52,7 +51,6 @@ const ItemListContainer = ({greeting}) => {
   return (
     <div>
         <h1>{greeting}</h1>
-        <ItemCount></ItemCount>
         <ItemList productos={product}></ItemList>
     </div>
   );
