@@ -2,6 +2,7 @@ import './ItemListContainer.css'
 import ItemList from "../../components/ItemList/ItemList";
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
+import Loading from '../../components/Loading/Loading';
 
 const ItemListContainer = ({greeting}) => {
   const ListaProductos=[
@@ -16,9 +17,10 @@ const ItemListContainer = ({greeting}) => {
     {id:'9', title:'Cuadro promo 1', description:'Cuadro con tematica de anime', price:1400, pictureUrl:'../../../images/levi.png', category:'Cuadro'},
     {id:'10', title:'Cuadro promo 2', description:'Cuadro con tematica de anime', price:2100, pictureUrl:'../../../images/megumi.png', category:'Cuadro'},
     ];
-  
+  const saludo="Lista de Productos"
   const {category}=useParams();
-  const[product, setProduct]=useState([]);
+  const [product, setProduct]=useState([]);
+  const [loading, setLoading]=useState(true)
   //const[filtraje, setFiltraje]=useState([]);
 
   const Productos=new Promise((resolve, reject)=>{
@@ -28,17 +30,21 @@ const ItemListContainer = ({greeting}) => {
   });
 
   useEffect(()=>{
-    Productos
+    setTimeout(()=>{
+      Productos
     .then((result)=>{
       if(category){
+        setLoading(false)
         setProduct(result.filter((cat)=> cat.category===category))
       }else{
+        setLoading(false)
         setProduct(result)
       } 
     })
     .catch((error)=>{
       console.log(error)
     })
+    }, 3000);      
   }, [category]);
 /*
   useEffect(()=>{
@@ -50,8 +56,11 @@ const ItemListContainer = ({greeting}) => {
 */
   return (
     <div>
-        <h1>{greeting}</h1>
-        <ItemList productos={product}></ItemList>
+        {
+          loading == true
+          ?<Loading/>
+          :<ItemList productos={product} greeting={saludo}/>
+        } 
     </div>
   );
 };

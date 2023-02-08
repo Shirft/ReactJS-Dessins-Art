@@ -1,5 +1,4 @@
 import "./ItemCount.css";
-import { Link } from "react-router-dom";
 
 const ItemCount = ({ contador, valUpgrade, stock }) => {
   const onAdd = () => {
@@ -22,12 +21,6 @@ const ItemCount = ({ contador, valUpgrade, stock }) => {
         <button onClick={resta}>-</button>
         <span>{contador}</span>
         <button onClick={onAdd}>+</button>
-      </div>
-      <div>
-      <button className="agregarCarrito">Agregar al carrito</button>
-        <Link to={`/cart`}>
-          <button className="terminarCompra">Terminar mi compra</button>
-        </Link>
       </div>
     </div>
   );

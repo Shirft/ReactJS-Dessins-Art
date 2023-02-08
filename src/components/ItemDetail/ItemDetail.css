@@ -7,3 +7,25 @@
     margin-left: 35%;
     margin-right: 35%;
 }
+.agregarCarrito{
+    border:none;
+    background-color: #8e5445;
+    color: aliceblue;
+    cursor: pointer;
+    padding: 0.8%;
+    border-radius: 5px;
+}
+.agregarCarrito:hover{
+    background-color: #92736b;
+}
+.terminarCompra{
+    border:none;
+    background-color: #8e5445;
+    color: aliceblue;
+    cursor: pointer;
+    padding: 0.8%;
+    border-radius: 5px;
+}
+.terminarCompra:hover{
+    background-color: #92736b;
+}
