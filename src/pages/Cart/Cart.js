@@ -34,7 +34,7 @@ const Cart = () => {
       <div>
         <div>No hay items agregados al carrito</div>
         <Link to="/">
-          <button>Volver</button>
+          <button>Volver a la lista de productos</button>
         </Link>
       </div>
     );
