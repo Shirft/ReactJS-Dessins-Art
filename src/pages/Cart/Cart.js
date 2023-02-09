@@ -3,7 +3,7 @@ import { CartCont } from "../../context/CartContext/CartContext";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cart } = useContext(CartCont);
+  const { cart, clear, removeItem} = useContext(CartCont);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -22,11 +22,13 @@ const Cart = () => {
             <h4 key={producto.id}>{producto.title}</h4>
             <div>Cantidad: {producto.quantity}</div>
             <div>{producto.total}</div>
-            <button>Eliminar items</button>
+            <button onClick={()=> removeItem(producto.id)}>Eliminar items</button>
           </div>
         ))}
         <hr />
         <div>Total: {total}</div>
+        <br/>
+        <button onClick={()=> clear()}>Vaciar carrito</button>
       </div>
     );
   } else {
@@ -34,7 +36,7 @@ const Cart = () => {
       <div>
         <div>No hay items agregados al carrito</div>
         <Link to="/">
-          <button>Volver a la lista de productos</button>
+          <button>Volver a la lista de producto</button>
         </Link>
       </div>
     );
