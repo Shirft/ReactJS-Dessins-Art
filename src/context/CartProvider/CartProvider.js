@@ -18,7 +18,7 @@ const CartProvider = ({ children }) => {
         repetido.quantity-=quantity;
         repetido.total= (item.price*repetido.quantity)
       }
-      
+
       newCart= [...cart];
 
     }else{
@@ -31,6 +31,7 @@ const CartProvider = ({ children }) => {
         total: (item.price*quantity),
         stock: item.stock,
       };
+      console.log(item.id)
       newCart=[...cart, newProduct];
 
     }
