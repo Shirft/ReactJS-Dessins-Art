@@ -31,7 +31,7 @@ const CartProvider = ({ children }) => {
         total: (item.price*quantity),
         stock: item.stock,
       };
-      console.log(item.id)
+
       newCart=[...cart, newProduct];
 
     }
