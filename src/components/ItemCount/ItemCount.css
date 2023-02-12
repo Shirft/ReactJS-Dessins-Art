@@ -13,6 +13,9 @@
 .controles>button:hover{
     background-color: #92736b;
 }
+.controles>button:active{
+    background-color: #8e5445;
+}
 .controles>span{
     font-size: 40px;
 }

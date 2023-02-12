@@ -1,7 +1,8 @@
+import './Loading.css';
 
 const Loading = () => {
   return (
-    <div>Espere por favor...</div>
+    <div className="Loader"></div>
   )
 }
 

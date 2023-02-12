@@ -1,9 +1,10 @@
 import "./ItemCount.css";
+import Swal from "sweetalert2";
 
 const ItemCount = ({ contador, valUpgrade, stock }) => {
   const onAdd = () => {
     if (contador == stock) {
-      alert("no hay mas stock del producto seleccionado");
+      Swal.fire("No hay mas stock del producto seleccionado");
       return;
     }
     valUpgrade(contador + 1);

@@ -1,34 +1,33 @@
 import "./ItemDetailContainer.css";
-import ItemDetail from "../../components/ItemDetail/ItemDetail"
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
+  const { id } = useParams();
+  const [oneproduct, setOneproduct] = useState({});
 
-    const {id}=useParams();
-    const[oneproduct, setOneproduct]=useState({});
+  const Producto = () => {
+    const db = getFirestore();
+    const querySnapshot = doc(db, "items", id);
 
-    const Producto = () =>{
-      const db= getFirestore();
-      const querySnapshot= doc(db, "items", id);
-
-      getDoc(querySnapshot)
-      .then((response)=>{ 
-        setOneproduct({id: response.id, ...response.data()})
+    getDoc(querySnapshot)
+      .then((response) => {
+        setOneproduct({ id: response.id, ...response.data() });
       })
-      .catch(error=> console.log(error))
-    };
+      .catch((error) => console.log(error));
+  };
 
-    useEffect(()=>{
-      Producto();
-    }, []);
+  useEffect(() => {
+    Producto();
+  }, []);
 
   return (
     <div className="seleccionado">
-        <ItemDetail objeto={oneproduct}></ItemDetail>
+      <ItemDetail objeto={oneproduct}></ItemDetail>
     </div>
-  )
-}
+  );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

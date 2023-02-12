@@ -12,7 +12,6 @@ import {
 } from "firebase/firestore";
 
 const ItemListContainer = () => {
-
   const saludo = "Lista de Productos";
   const { category } = useParams();
   const [product, setProduct] = useState([]);
@@ -20,34 +19,11 @@ const ItemListContainer = () => {
 
   const Productos = () => {
     const db = getFirestore();
-    const queryBase=collection(db, "items");
-    const querySnapshot = category ? query(queryBase, where("categoryId", "==", category)) : queryBase; 
-    
-    getDocs(querySnapshot)
-        .then((response) => {
-          const datos = response.docs.map((doc) => {
-            return { id: doc.id, ...doc.data() };
-          });
-          setLoading(false);
-          setProduct(datos);
-        })
-        .catch((error) => console.log(error));
-/*
-    if (category) {
-      const newConfiguration = query(
-        querySnapshot,
-        where("categoryId", "==", category)
-      );
-      getDocs(newConfiguration)
-        .then((response) => {
-          const datos = response.docs.map((doc) => {
-            return { id: doc.id, ...doc.data() };
-          });
-          setLoading(false);
-          setProduct(datos);
-        })
-        .catch((error) => console.log(error));
-    } else {
+    const queryBase = collection(db, "items");
+    const querySnapshot = category
+      ? query(queryBase, where("categoryId", "==", category))
+      : queryBase;
+    setTimeout(() => {
       getDocs(querySnapshot)
         .then((response) => {
           const datos = response.docs.map((doc) => {
@@ -57,7 +33,7 @@ const ItemListContainer = () => {
           setProduct(datos);
         })
         .catch((error) => console.log(error));
-    }*/
+    }, 1000);
   };
 
   useEffect(() => {

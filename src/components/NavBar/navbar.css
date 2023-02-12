@@ -18,4 +18,8 @@ nav li{
 nav a{
     text-decoration: none;
     color:black;
+    font-size: 25px;
+}
+nav a:hover{
+    color:aliceblue;
 }

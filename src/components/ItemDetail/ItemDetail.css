@@ -1,31 +1,53 @@
-.unProducto{
-    padding: 0.5%;
-    border-style: groove;
-    border-color: brown;
-    margin:5px;
-    border-radius: 5px;
-    margin-left: 35%;
-    margin-right: 35%;
+.unProducto {
+  padding: 0.5%;
+  border-style: groove;
+  border-color: brown;
+  margin: 5px;
+  border-radius: 5px;
+  margin-left: 35%;
+  margin-right: 35%;
 }
-.agregarCarrito{
-    border:none;
-    background-color: #8e5445;
-    color: aliceblue;
-    cursor: pointer;
-    padding: 0.8%;
-    border-radius: 5px;
+.agregarCarrito {
+  border: none;
+  background-color: #8e5445;
+  color: aliceblue;
+  cursor: pointer;
+  padding: 0.8%;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
-.agregarCarrito:hover{
-    background-color: #92736b;
+.agregarCarrito:hover {
+  background-color: #92736b;
 }
-.terminarCompra{
-    border:none;
-    background-color: #8e5445;
-    color: aliceblue;
-    cursor: pointer;
-    padding: 0.8%;
-    border-radius: 5px;
+.agregarCarrito:active {
+  background-color: #8e5445;
 }
-.terminarCompra:hover{
-    background-color: #92736b;
+.terminarCompra {
+  border: none;
+  background-color: #8e5445;
+  color: aliceblue;
+  cursor: pointer;
+  padding: 0.8%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.terminarCompra:hover {
+  background-color: #92736b;
+}
+.terminarCompra:active {
+  background-color: #8e5445;
+}
+.volver {
+  border: none;
+  background-color: #8e5445;
+  color: aliceblue;
+  cursor: pointer;
+  padding: 0.8%;
+  border-radius: 5px;
+}
+.volver:hover {
+  background-color: #92736b;
+}
+.volver:active {
+  background-color: #8e5445;
 }

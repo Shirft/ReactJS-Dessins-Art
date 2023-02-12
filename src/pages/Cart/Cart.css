@@ -1,6 +1,7 @@
 .container{
     display:flex;
     justify-content:space-evenly;
+    padding-top: 50px;
 }
 .carrito_Formulario form{
     display:flex;
@@ -16,4 +17,18 @@ form input{
 }
 form .buttons button{
     margin-right: 10px;
+}
+.producto_compra{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.producto_compra>div{
+    margin: 10px;
+}
+.swal2-styled.swal2-confirm{
+    background-color: #8e5445;
+}
+.Sin_Productos{
+    font-size: 30px;
 }

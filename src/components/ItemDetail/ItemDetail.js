@@ -6,7 +6,7 @@ import { CartCont } from "../../context/CartContext/CartContext";
 
 const ItemDetail = ({ objeto }) => {
   const { addItem } = useContext(CartCont);
-  const [contador, setContador] = useState(1);
+  const [contador, setContador] = useState(0);
 
   return (
     <div className="unProducto">
@@ -30,14 +30,21 @@ const ItemDetail = ({ objeto }) => {
       <div>
         <button
           className="agregarCarrito"
-          onClick={() => addItem(objeto, contador) }
+          onClick={() => addItem(objeto, contador)}
         >
           Agregar al carrito
         </button>
       </div>
-      <Link to={`/cart`}>
-        <button className="terminarCompra">Terminar mi compra</button>
-      </Link>
+      <div>
+        <Link to={`/cart`}>
+          <button className="terminarCompra">Terminar mi compra</button>
+        </Link>
+      </div>
+      <div>
+        <Link to={`/`}>
+          <button className="volver">Volver</button>
+        </Link>
+      </div>
     </div>
   );
 };

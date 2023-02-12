@@ -7,6 +7,12 @@
 .App-link {
   color: #61dafb;
 }
+.productos:hover{
+  box-shadow: 10px 15px 10px black;
+  transition: 0.5s;
+  color:brown;
+}
+
 
 @keyframes App-logo-spin {
   from {

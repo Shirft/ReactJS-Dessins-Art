@@ -1,0 +1,20 @@
+.Carrito{
+    background-color: bisque;
+    border-style: groove;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    border-color: brown;
+}
+.Carrito:hover{
+    box-shadow: 2px 2px 2px black;
+    transition: 0.2s;
+}
+.Carrito span{
+    background-color: red;
+    font-size: 15px;
+    border-radius: 100%;
+    color:aliceblue;
+    padding: 8px;
+}
